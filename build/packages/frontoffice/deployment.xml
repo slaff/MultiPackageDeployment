@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<package xmlns="http://www.zend.com/server/deployment-descriptor/1.0" version="1.0">
+    <name>FrontOfficeApp</name>
+    <version>
+        <release>1.0.1</release>
+    </version>
+    <appdir>data</appdir>
+    <docroot>data/www</docroot>
+    <scriptsdir>scripts</scriptsdir>
+    <dependencies>
+    <required>
+      <extension>
+        <name>mysqli</name>
+        <min>0.1</min>
+      </extension>
+      <directive>
+        <name>register_globals</name>
+        <equals>Off</equals>
+      </directive>
+    </required>
+  </dependencies>
+    <parameters>
+    <parameter display="Application Env" id="APPLICATION_ENV" readonly="false" required="false" type="choice">
+      <validation>
+        <enums>
+          <enum>testing</enum>
+          <enum>staging</enum>
+          <enum>production</enum>
+        </enums>
+      </validation>
+      <defaultvalue>staging</defaultvalue>
+    </parameter>
+    <parameter display="Db User" id="DB_USER" readonly="false" required="false" type="string"/>
+    <parameter display="DB Host" id="DB_HOST" readonly="false" required="false" type="string"/>
+    <parameter display="DB Password" id="DB_PASS" readonly="false" required="false" type="password"/>
+    <parameter display="Db name:" id="DB_NAME" readonly="false" required="false" type="string"/>
+  </parameters>
+</package>

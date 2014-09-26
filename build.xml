@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Build" default="build">
+  <target name="deploy">
+  	<exec command="/usr/bin/zs-client installApp --zpk='${basedir}/BackOffice.zpk' --baseUri='${base}' --userParams='${params}' --zskey='${key}' --zssecret='${secret}' --zsurl='${zsurl}'"/>
+    <exec command="/usr/bin/zs-client installApp --zpk='${basedir}/FrontOffice.zpk' --baseUri='${base}' --userParams='${params}' --zskey='${key}' --zssecret='${secret}' --zsurl='${zsurl}'"/>
+    <exec command="/usr/bin/zs-client installApp --zpk='${basedir}/Cron.zpk' --baseUri='${base}' --userParams='${params}' --zskey='${key}' --zssecret='${secret}' --zsurl='${zsurl}'"/>
+  </target>
+</project>
